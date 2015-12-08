@@ -1,4 +1,5 @@
 {
+    "perl"         : "6.*",
     "name"         : "Lingua::Conjunction",
     "version"      : "1.001001",
     "description"  : "Convert lists into linguistic conjunctions",
