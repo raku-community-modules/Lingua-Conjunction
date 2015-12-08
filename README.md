@@ -62,7 +62,8 @@ to the previous one, when `type` argument is set to value `or`.
 Takes a string representing the code of the language to use. This will
 pre-set `con`, `dis`, and `last` arguments. **Defaults to** `en`.
 Currently supported languages and the defaults they pre-set are as follows
-(language are the first two-letter key on the left):
+(language is the first two-letter key on the left; that's what you'd
+specify as `lang` argument):
 
 ```perl6
     af => { last => True,  con => 'en',  dis => 'of'    },
