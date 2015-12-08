@@ -17,13 +17,11 @@ Lingua::Conjunction - convert lists into linguistic conjunctions
     say conjunction 'Tom, a man', 'Tiffany, a woman', 'GumbyBRAIN, a bot';
 
     # Reports for May, June, and August
-    say conjunction {:str<Report[|s] for |list|>}, <May June August>;
+    say conjunction <May June August>, :str('Report[|s] for |list|');
 
-    # "Jacques, un garcon; Jeanne, une fille; et Spot, un chien"
-    say conjunction {:lang<fr>},
-        'Jacques, un garcon', 'Jeanne, une fille', 'Spot, un chien';
-
-    say ☌ <chair spoon window>; # unicode equivalent
+    # "Jacques, un garcon; Jeanne, une fille et Spot, un chien"
+    say conjunction 'Jacques, un garcon', 'Jeanne, une fille', 'Spot, un chien',
+        :lang<fr>;
 ```
 
 # DESCRIPTION
@@ -35,11 +33,82 @@ where that string is meant to be read by a human.
 
 ## `conjunction`
 
-## `☌`
+    say conjunction <chair spoon>;
+    say conjunction <May June August>, :str('Report[|s] for |list|'),
+        :lang<fr>, :!last, :sep<·>, :alt<°>, :con<aaand>, :dis<ooor>, :type<or>;
 
-    say ☌ <foo bar baz>.
+Returns a string with the given list of items joined based on the
+configuration specified by the named arguments, which are as follows:
 
-`U+260C (e2 98 8c): CONJUNCTION [☌]`. Same as [`conjunction`](#conjunction)
+### `alt`
+
+Specifies an alternative separator to use when at least one of the items
+contains `sep` separator. **Defaults to** `;` (a semicolon).
+
+### `con`
+
+Short for **con**junction. The term to use when joining the last item
+to the previous one, when `type` argument is set to value `and`.
+**By default** is set based on value of `lang` argument.
+
+### `dis`
+
+Short for **dis**junction. The term to use when joining the last item
+to the previous one, when `type` argument is set to value `or`.
+**By default** is set based on value of `lang` argument.
+
+### `lang`
+
+Takes a string representing the code of the language to use. This will
+pre-set `:con`, `:dis`, and `:last` arguments. **Defaults to** `en`.
+Currently supported languages and the defaults they pre-set are as follows
+(language are the first two-letter key on the left):
+
+```perl6
+    af => { last => True,  con => 'en',  dis => 'of'    },
+    da => { last => True,  con => 'og',  dis => 'eller' },
+    de => { last => True,  con => 'und', dis => 'oder'  },
+    en => { last => True,  con => 'and', dis => 'or'    },
+    es => { last => True,  con => 'y',   dis => 'o'     },
+    fi => { last => True,  con => 'ja',  dis => 'tai'   },
+    fr => { last => False, con => 'et',  dis => 'ou'    },
+    it => { last => True,  con => 'e',   dis => 'o'     },
+    la => { last => True,  con => 'et',  dis => 'vel'   },
+    nl => { last => True,  con => 'en',  dis => 'of'    },
+    no => { last => False, con => 'og',  dis => 'eller' },
+    pt => { last => True,  con => 'e',   dis => 'ou'    },
+    sw => { last => True,  con => 'na',  dis => 'au'    },
+```
+
+### `last`
+
+Specifies whether to use `sep` when joining the penultimate and last elements
+of the list, when the number of elements is more than 2. In English, this
+is what's known as [Oxford Comma](https://en.wikipedia.org/wiki/Serial_comma).
+**By default** is set based on value of `lang` argument.
+
+### `sep`
+
+The primary item separator to use. **Defaults to** `,` (a comma).
+
+### `str`
+
+    say conjunction <May June August>, :str('Report[|s] for |list|');
+    say conjunction <Squishy Slushi Sushi>,
+        :str('Octop[us|i] [is|are] named |list|');
+
+Specifies a template to use when generating the string. You can use
+special sequence `[|]` (e.g. `octop[us|i]`) where string to the left of
+the `|` will be used when the list contains just one items and the string to
+the right will be used otherwise. The other special sequence is
+`|list|` that can will be replacedd with the "conjuncted" items of the list.
+**Defaults to** `|list|`
+
+### `type`
+
+Takes either value `and` or value `or`. Specifies whether words
+specified by `con` or by `dis` arguments should be used when joining the
+last two elements of the list.
 
 # REPOSITORY
 

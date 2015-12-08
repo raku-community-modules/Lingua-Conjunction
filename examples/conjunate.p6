@@ -10,10 +10,8 @@ say conjunction <chair spoon window>; # chair, spoon, and window
 say conjunction 'Tom, a man', 'Tiffany, a woman', 'GumbyBRAIN, a bot';
 
 # Reports for May, June, and August
-say conjunction {:str<Report[|s] for |list|>}, <May June August>;
+say conjunction <May June August>, :str('Report[|s] for |list|');
 
-# "Jacques, un garcon; Jeanne, une fille; et Spot, un chien"
-say conjunction {:lang<fr>},
-    'Jacques, un garcon', 'Jeanne, une fille', 'Spot, un chien';
-
-say ☌ <chair spoon window>; # unicode equivalent
+# "Jacques, un garcon; Jeanne, une fille et Spot, un chien"
+say conjunction 'Jacques, un garcon', 'Jeanne, une fille', 'Spot, un chien',
+    :lang<fr>;

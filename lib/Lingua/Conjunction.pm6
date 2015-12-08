@@ -1,24 +1,47 @@
 unit package Lingua::Conjunction:ver<1.001001>;
 
-# This handy table was borrowed from
+# This handy table was partially borrowed from
 # https://metacpan.org/pod/Lingua::Conjunction
 my %language =
-    af => { sep => ',', alt => ";", pen => 1, con => 'en',  dis => 'of'    },
-    da => { sep => ',', alt => ";", pen => 1, con => 'og',  dis => 'eller' },
-    de => { sep => ',', alt => ";", pen => 1, con => 'und', dis => 'oder'  },
-    en => { sep => ',', alt => ";", pen => 1, con => 'and', dis => 'or'    },
-    es => { sep => ',', alt => ";", pen => 1, con => 'y',   dis => 'o'     },
-    fi => { sep => ',', alt => ";", pen => 1, con => 'ja',  dis => 'tai'   },
-    fr => { sep => ',', alt => ";", pen => 0, con => 'et',  dis => 'ou'    },
-    it => { sep => ',', alt => ";", pen => 1, con => 'e',   dis => 'o'     },
-    la => { sep => ',', alt => ";", pen => 1, con => 'et',  dis => 'vel'   },
-    nl => { sep => ',', alt => ';', pen => 1, con => 'en',  dis => 'of'    },
-    no => { sep => ',', alt => ";", pen => 0, con => 'og',  dis => 'eller' },
-    pt => { sep => ',', alt => ";", pen => 1, con => 'e',   dis => 'ou'    },
-    sw => { sep => ',', alt => ";", pen => 1, con => 'na',  dis => 'au'    },
+    af => { last => True,  con => 'en',  dis => 'of'    },
+    da => { last => True,  con => 'og',  dis => 'eller' },
+    de => { last => True,  con => 'und', dis => 'oder'  },
+    en => { last => True,  con => 'and', dis => 'or'    },
+    es => { last => True,  con => 'y',   dis => 'o'     },
+    fi => { last => True,  con => 'ja',  dis => 'tai'   },
+    fr => { last => False, con => 'et',  dis => 'ou'    },
+    it => { last => True,  con => 'e',   dis => 'o'     },
+    la => { last => True,  con => 'et',  dis => 'vel'   },
+    nl => { last => True,  con => 'en',  dis => 'of'    },
+    no => { last => False, con => 'og',  dis => 'eller' },
+    pt => { last => True,  con => 'e',   dis => 'ou'    },
+    sw => { last => True,  con => 'na',  dis => 'au'    },
 ;
 
-multi conjunction (*@args) is export { conjunction({:lang('en')}, @args) }
-multi conjunction (Hash $args, *@args) is export {  }
-sub term:<☌> (*@args ) is export {}
-    # = ::('&conjunction');
+sub conjunction (
+    *@els,
+    Str:D  :$lang                     = 'en',
+    Str:D  :$sep is copy              = ',',
+    Str:D  :$alt                      = ';',
+    Str:D  :$con                      = %language{ $lang }<con>,
+    Str:D  :$dis                      = %language{ $lang }<dis>,
+    Bool:D :$last                     = %language{ $lang }<last>,
+    Str:D  :$type where any(<and or>) = 'and',
+    Str:D  :$str                      = '|list|',
+) returns Str is export {
+    my $sep-word = $type eq 'and' ?? $con !! $dis;
+    $sep = $alt if @els.grep(/$sep/);
+    my $list = do given @els.elems {
+        when 0 { ''                       }
+        when 1 { @els[0]                  }
+        when 2 { @els.join(" $sep-word ") }
+        default {
+            @els[0..*-2].join("$sep ")
+            ~ "{$last ?? $sep !! ''} $sep-word @els[*-1]";
+        }
+    }
+    return $str.subst(
+        / '[' (<-[|]>*) '|' (<-[\]]>*) ']'/,
+        {@els.elems == 0 || @els.elems > 2 ?? $1 !! $0}, :g
+    ).subst('|list|', $list, :g);
+}
