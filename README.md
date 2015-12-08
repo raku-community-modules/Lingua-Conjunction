@@ -2,7 +2,7 @@
 
 # NAME
 
-Lingua::Conjunction - convert lists into linguistic conjunctions
+Lingua::Conjunction - Convert lists into linguistic conjunctions and fill them into a template
 
 # SYNOPSIS
 
