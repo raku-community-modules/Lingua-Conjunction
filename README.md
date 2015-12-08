@@ -100,7 +100,7 @@ The primary item separator to use. **Defaults to** `,` (a comma).
 
 Specifies a template to use when generating the string. You can use
 special sequence `[|]` (e.g. `octop[us|i]`) where string to the left of
-the `|` will be used when the list contains just one items and the string to
+the `|` will be used when the list contains just one item and the string to
 the right will be used otherwise. The other special sequence is
 `|list|` that can will be replacedd with the "conjuncted" items of the list.
 **Defaults to** `|list|`
