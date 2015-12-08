@@ -60,7 +60,7 @@ to the previous one, when `type` argument is set to value `or`.
 ### `lang`
 
 Takes a string representing the code of the language to use. This will
-pre-set `:con`, `:dis`, and `:last` arguments. **Defaults to** `en`.
+pre-set `con`, `dis`, and `last` arguments. **Defaults to** `en`.
 Currently supported languages and the defaults they pre-set are as follows
 (language are the first two-letter key on the left):
 
