@@ -16,8 +16,8 @@ Lingua::Conjunction - convert lists into linguistic conjunctions
     # "Tom, a man; Tiffany, a woman; and GumbyBRAIN, a bot"
     say conjunction 'Tom, a man', 'Tiffany, a woman', 'GumbyBRAIN, a bot';
 
-    # Reports for May, June, and August
-    say conjunction <May June August>, :str('Report[|s] for |list|');
+    # These are reports for May, June, and August
+    say conjunction <May June August>, :str('These [is|are] report[|s] for |list|');
 
     # "Jacques, un garcon; Jeanne, une fille et Spot, un chien"
     say conjunction 'Jacques, un garcon', 'Jeanne, une fille', 'Spot, un chien',
