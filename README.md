@@ -123,7 +123,7 @@ https://github.com/zoffixznet/perl6-Lingua-Conjunction/issues
 
 # AUTHOR
 
-This module was heavily inspired by Perl 5's
+This module was inspired by Perl 5's
 [Lingua::Conjunction](https://metacpan.org/pod/Lingua::Conjunction) and
 and my own
 [List::ToHumanString](https://metacpan.org/pod/List::ToHumanString). Some
