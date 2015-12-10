@@ -24,6 +24,25 @@ Lingua::Conjunction - Convert lists into linguistic conjunctions and fill them i
         :lang<fr>;
 ```
 
+# Table of Contents
+- [NAME](#name)
+- [SYNOPSIS](#synopsis)
+- [DESCRIPTION](#description)
+- [EXPORTED SUBROUTINES](#exported-subroutines)
+    - [`conjunction`](#conjunction)
+        - [`alt`](#alt)
+        - [`con`](#con)
+        - [`dis`](#dis)
+        - [`lang`](#lang)
+        - [`last`](#last)
+        - [`sep`](#sep)
+        - [`str`](#str)
+        - [`type`](#type)
+- [REPOSITORY](#repository)
+- [BUGS](#bugs)
+- [AUTHOR](#author)
+- [LICENSE](#license)
+
 # DESCRIPTION
 
 Provides a way to make it easy to prepare a string containing a list of items,
