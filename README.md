@@ -6,7 +6,7 @@ Lingua::Conjunction - Convert lists into linguistic conjunctions and fill them i
 
 # SYNOPSIS
 
-```perl6
+```raku
     use Lingua::Conjunction;
 
     say conjunction <chair>; # chair
@@ -84,7 +84,7 @@ Currently supported languages and the defaults they pre-set are as follows
 (language is the first two-letter key on the left; that's what you'd
 specify as `lang` argument):
 
-```perl6
+```raku
     af => { last => True,  con => 'en',  dis => 'of'    },
     da => { last => True,  con => 'og',  dis => 'eller' },
     de => { last => True,  con => 'und', dis => 'oder'  },
@@ -133,16 +133,16 @@ last two elements of the list.
 # REPOSITORY
 
 Fork this module on GitHub:
-https://github.com/zoffixznet/perl6-Lingua-Conjunction
+https://github.com/raku-community-modules/Lingua-Conjunction
 
 # BUGS
 
 To report bugs or request features, please use
-https://github.com/zoffixznet/perl6-Lingua-Conjunction/issues
+https://github.com/raku-community-modules/Lingua-Conjunction/issues
 
 # AUTHOR
 
-This module was inspired by Perl 5's
+This module was inspired by Perl's
 [Lingua::Conjunction](https://metacpan.org/pod/Lingua::Conjunction) and
 and my own
 [List::ToHumanString](https://metacpan.org/pod/List::ToHumanString). Some
