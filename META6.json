@@ -10,5 +10,5 @@
         "Lingua::Conjunction" : "lib/Lingua/Conjunction.pm6"
     },
     "authors"      : ["Zoffix Znet"],
-    "support"      : { "source"   : "git://github.com/zoffixznet/perl6-Lingua-Conjunction.git" }
+    "support"      : { "source"   : "git://github.com/raku-community-modules/Lingua-Conjunction.git" }
 }
