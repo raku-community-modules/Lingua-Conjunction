@@ -1,4 +1,7 @@
-Revision History for 'Lingua-Conjunction' Perl 6 Distribution
+Revision history for Lingua-Conjunction
+
+{{$NEXT}}
+    - First version in zef ecosystem
 
 1.001001  2015-12-08
   - First version released on an unsuspecting world

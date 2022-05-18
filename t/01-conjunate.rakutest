@@ -1,9 +1,7 @@
-#!perl6
-
-use v6;
 use Test;
-use lib 'lib';
 use Lingua::Conjunction;
+
+plan 10;
 
 is conjunction(), '', 'no items';
 is conjunction(<chair>), 'chair', 'single item';
@@ -32,4 +30,4 @@ is (conjunction :lang<fr>,
     ), 'Jacques, un garcon; Jeanne, une fille et Spot, un chien',
     'French version';
 
-done-testing;
+# vim: expandtab shiftwidth=4

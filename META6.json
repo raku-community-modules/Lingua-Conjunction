@@ -1,14 +1,30 @@
 {
-    "perl"         : "6.c",
-    "name"         : "Lingua::Conjunction",
-    "license"      : "Artistic-2.0",
-    "version"      : "1.001001",
-    "description"  : "Convert lists into linguistic conjunctions and fill them into a template",
-    "depends"      : [ ],
-    "test-depends" : [ "Test" ],
-    "provides"     : {
-        "Lingua::Conjunction" : "lib/Lingua/Conjunction.pm6"
-    },
-    "authors"      : ["Zoffix Znet"],
-    "support"      : { "source"   : "git://github.com/raku-community-modules/Lingua-Conjunction.git" }
+  "auth": "zef:raku-community-modules",
+  "authors": [
+    "Zoffix Znet"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "Convert lists into linguistic conjunctions and fill them into a template",
+  "license": "Artistic-2.0",
+  "name": "Lingua::Conjunction",
+  "perl": "6.c",
+  "provides": {
+    "Lingua::Conjunction": "lib/Lingua/Conjunction.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "https://github.com/raku-community-modules/Lingua-Conjunction.git",
+  "support": {
+    "source": "git://github.com/raku-community-modules/Lingua-Conjunction.git"
+  },
+  "tags": [
+    "LINGUA",
+    "CONJUNCTION"
+  ],
+  "test-depends": [
+  ],
+  "version": "1.001001"
 }
