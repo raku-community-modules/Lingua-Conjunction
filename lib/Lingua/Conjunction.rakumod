@@ -43,7 +43,7 @@ my sub conjunction (
     $str
       .subst(
         / '[' (<-[|]>*) '|' (<-[\]]>*) ']'/,
-        { @els.elems == 0 || @els.elems > 2 ?? $1 !! $0 }, :g
+        { @els.elems == 0 || @els.elems > 1 ?? $1 !! $0 }, :g
       )
       .subst('|list|', $list, :g)
 }
