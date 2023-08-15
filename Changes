@@ -2,6 +2,9 @@ Revision history for Lingua-Conjunction
 
 {{$NEXT}}
 
+1.1.1  2023-08-15T11:03:05+02:00
+    - Fix of square bracket resolution (thank packy@github)
+
 1.1  2022-05-18T15:08:48+02:00
     - First version in zef ecosystem
 

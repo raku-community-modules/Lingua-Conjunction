@@ -86,7 +86,7 @@ say conjunction <Squishy Slushi Sushi>,
     :str('Octop[us|i] [is|are] named |list|');
 ```
 
-Specifies a template to use when generating the string. You can use special sequence `[|]` (e.g. `octop[us|i]`) where string to the left of the `|` will be used when the list contains just one item and the string to the right will be used otherwise. The other special sequence is `|list|` that can will be replaced with the "conjuncted" items of the list. **Defaults to** `|list|`.
+Specifies a template to use when generating the string. You can use special sequence `[|]` (e.g. `octop[us|i]`) where string to the left of the `|` will be used when the list contains just one item and the string to the right will be used otherwise. The other special sequence is `|list|` that will be replaced with the "conjuncted" items of the list. **Defaults to** `|list|`.
 
 ### type
 
@@ -104,7 +104,7 @@ COPYRIGHT AND LICENSE
 
 Copyright 2015 - 2017 Zoffix Znet
 
-Copyright 2018 - 2022 Raku Community
+Copyright 2018 - 2023 Raku Community
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

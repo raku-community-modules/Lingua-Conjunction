@@ -164,7 +164,7 @@ Specifies a template to use when generating the string. You can use
 special sequence C<[|]> (e.g. C<octop[us|i]>) where string to the left of
 the C<|> will be used when the list contains just one item and the string to
 the right will be used otherwise. The other special sequence is
-C<|list|> that can will be replaced with the "conjuncted" items of the list.
+C<|list|> that will be replaced with the "conjuncted" items of the list.
 B<Defaults to> C<|list|>.
 
 =head3 type
@@ -187,7 +187,7 @@ The rest is by Zoffix Znet (http://zoffix.com/)
 
 Copyright 2015 - 2017 Zoffix Znet
 
-Copyright 2018 - 2022 Raku Community
+Copyright 2018 - 2023 Raku Community
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
