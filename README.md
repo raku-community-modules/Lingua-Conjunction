@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/raku-community-modules/Lingua-Conjunction/actions/workflows/test.yml/badge.svg)](https://github.com/raku-community-modules/Lingua-Conjunction/actions)
+[![Actions Status](https://github.com/raku-community-modules/Lingua-Conjunction/actions/workflows/linux.yml/badge.svg)](https://github.com/raku-community-modules/Lingua-Conjunction/actions) [![Actions Status](https://github.com/raku-community-modules/Lingua-Conjunction/actions/workflows/macos.yml/badge.svg)](https://github.com/raku-community-modules/Lingua-Conjunction/actions) [![Actions Status](https://github.com/raku-community-modules/Lingua-Conjunction/actions/workflows/windows.yml/badge.svg)](https://github.com/raku-community-modules/Lingua-Conjunction/actions)
 
 NAME
 ====
@@ -104,7 +104,7 @@ COPYRIGHT AND LICENSE
 
 Copyright 2015 - 2017 Zoffix Znet
 
-Copyright 2018 - 2023 Raku Community
+Copyright 2020 - 2024 Raku Community
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
